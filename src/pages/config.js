@@ -11,14 +11,14 @@ const config = [
         path: '/',
         secure: false,
         exact: true,
-        layout: DefaultLayouts,
+        layout: AuthLayout,
     },
     {
         component: About,
         path: '/about',
         secure: false,
         exact: true,
-        layout: DefaultLayouts,
+        layout: AuthLayout,
     },
     {
         component: Kitchen,
