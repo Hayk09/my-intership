@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from '../components/Navbar'
+import Footer from "../components/Footer";
 
 
 const AuthLayout = ({ children }) => {
@@ -7,7 +8,7 @@ const AuthLayout = ({ children }) => {
         <div>
             <Navbar />
             <div>{children}</div>
-         
+            <Footer/>
         </div>
 
     )
