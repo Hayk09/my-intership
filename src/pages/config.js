@@ -1,8 +1,9 @@
-import AuthLayout from "../layouts/AuthLayout";
 import DefaultLayouts from "../layouts/DefaultLayouts";
+import AuthLayout from "../layouts/AuthLayout";
 import HomePage from "./HomePage";
 import About from "./About";
 import Kitchen from "./Kitchen";
+
 
 
 const config = [
@@ -11,14 +12,14 @@ const config = [
         path: '/',
         secure: false,
         exact: true,
-        layout: DefaultLayouts,
+        layout: AuthLayout,
     },
     {
         component: About,
         path: '/about',
         secure: false,
         exact: true,
-        layout: DefaultLayouts,
+        layout: AuthLayout,
     },
     {
         component: Kitchen,
@@ -27,7 +28,6 @@ const config = [
         exact: true,
         layout: DefaultLayouts,
     },
-
  
 ]
 
