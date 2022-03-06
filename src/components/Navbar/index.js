@@ -1,16 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import "./index.scss"
 
 const Navbar = () => {
   return (
     <div>
-      <Link to='/'>
-      <p>HomePage</p>
-      </Link>
-
-      <Link to='/about'>
-         <p>About</p> 
-      </Link>
+      
         
     </div>
   )
