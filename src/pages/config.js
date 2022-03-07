@@ -20,7 +20,7 @@ const config = [
         path: '/about',
         secure: false,
         exact: true,
-        layout: AuthLayout,
+        layout: DefaultLayouts,
     },
     {
         component: Kitchen,
