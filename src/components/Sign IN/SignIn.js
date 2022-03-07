@@ -17,8 +17,8 @@ const SignIn = () => {
     return(
        <div>   
        <img src={MenuButtonIcon} className="MenuButtonIcon"/>
-       <p className="WD1"><b>WD</b></p>
-       <p className="About">About</p>
+       <a href="/"><p className="WD1"><b>WD</b></p></a>
+       <a href="/about"><p className="About">About</p></a>
        <p className="Concat">Concat</p>
        <p className="Delivery">Delivery</p>
        <p className="Signin"><b>Sign In</b></p> 
@@ -32,7 +32,6 @@ const SignIn = () => {
            <p className="Password">Password</p>
            <input type="password" {...register("Password",{required:true})} className="password"/>
            <button type="submit" className="SignIn">Sign In</button>
-           
        </form> 
        <img src={HomePagePhoto} className="HomePage"/>
        
