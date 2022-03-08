@@ -3,6 +3,7 @@ import AuthLayout from "../layouts/AuthLayout";
 import HomePage from "./HomePage";
 import About from "./About";
 import Kitchen from "./Kitchen";
+import SignIn from "../components/Sign IN/SignIn";
 
 
 
@@ -19,11 +20,18 @@ const config = [
         path: '/about',
         secure: false,
         exact: true,
-        layout: AuthLayout,
+        layout: DefaultLayouts,
     },
     {
         component: Kitchen,
         path: '/kitchen',
+        secure: false,
+        exact: true,
+        layout: DefaultLayouts,
+    },
+    {
+        component: SignIn,
+        path: '/signIn',
         secure: false,
         exact: true,
         layout: DefaultLayouts,
