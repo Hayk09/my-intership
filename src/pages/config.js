@@ -1,25 +1,16 @@
-import DefaultLayouts from "../layouts/DefaultLayouts";
-import About from "./About";
-import Kitchen from "./Kitchen";
+// import DefaultLayouts from "../layouts/DefaultLayouts";
+import AuthLayout from "../layouts/AuthLayout";
+import HomePage from "./HomePage";
 
 
 const config = [
     {
-        component: About,
-        path: '/about',
+        component: HomePage,
+        path: '/',
         secure: false,
         exact: true,
-        layout: DefaultLayouts,
-    },
-    {
-        component: Kitchen,
-        path: '/kitchen',
-        secure: false,
-        exact: true,
-        layout: DefaultLayouts,
-    },
-   
- 
+        layout: AuthLayout,
+    }
 ]
 
 export default config;

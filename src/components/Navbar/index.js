@@ -1,20 +1,26 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-
+import { Box } from '@mui/material'
+import {COLOR,BORDRADIUS,FONTS} from '../../constant/index'
 // import MenuButtonIcon from "../Assets/Group 2.png"
 
-const Navbar = ({data}) => {
+const Navbar = () => {
  
   return (
-    <div>
-       {/* <img src={MenuButtonIcon} className="MenuButton"/> */}
-       sdbhsbvhsd
-        {
-          data?.map((e)=> (
-            <p>{e}</p>
-          ))
-        }
-    </div>
+    <Box
+      sx={{
+        display: 'flex',
+        backgroundColor:COLOR.brown ,
+        height: '90px',
+        width: '100%',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        borderRadius: BORDRADIUS.lg
+      }}
+    >
+       <Box>
+         
+       </Box>
+    </Box>
   )
 }
 

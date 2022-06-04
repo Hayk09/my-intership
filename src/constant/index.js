@@ -1,0 +1,3 @@
+import {COLOR,BORDRADIUS,FONTS} from './style'
+
+export {COLOR,BORDRADIUS,FONTS}

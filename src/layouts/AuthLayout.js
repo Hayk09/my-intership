@@ -8,10 +8,10 @@ const AuthLayout = ({ children }) => {
     return (
         <div>
             <Navbar />
-           
-            <Footer/>
             <div>{children}</div>
             
+            <Footer/>
+          
         </div>
 
     )
