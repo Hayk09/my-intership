@@ -2,6 +2,10 @@ import DefaultLayouts from "../layouts/DefaultLayouts";
 import AuthLayout from "../layouts/AuthLayout";
 import HomePage from "./HomePage";
 import LogIn from "./LogIN";
+import Pricing from "./Pricing";
+import User from "./User";
+import Admin from "./Admin"
+import SignIn from "./SignIn";
 
 const config = [
     {
@@ -14,6 +18,34 @@ const config = [
     {
         component: LogIn,
         path: '/login',
+        secure: false,
+        exact: true,
+        layout: DefaultLayouts,
+    },
+    {
+        component: SignIn,
+        path: '/signIn',
+        secure: false,
+        exact: true,
+        layout: DefaultLayouts,
+    },
+    {
+        component: Pricing,
+        path: '/pricing',
+        secure: false,
+        exact: true,
+        layout: DefaultLayouts,
+    },
+    {
+        component: User,
+        path: '/user',
+        secure: false,
+        exact: true,
+        layout: DefaultLayouts,
+    },
+    {
+        component: Admin,
+        path: '/admin',
         secure: false,
         exact: true,
         layout: DefaultLayouts,
