@@ -94,6 +94,15 @@ const Navbar = () => {
           </Button>
           <Button
             sx={{
+              color: COLOR.black,
+              width: "130px",
+            }}
+            onClick={() => history.push("/tools")}
+          >
+            Tools
+          </Button>
+          <Button
+            sx={{
               color: COLOR.amber,
               bgcolor: COLOR.yellow3,
               borderRadius: BORDRADIUS.xxl,

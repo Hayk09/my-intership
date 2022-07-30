@@ -3,6 +3,7 @@ import AuthLayout from "../layouts/AuthLayout";
 import HomePage from "./HomePage";
 import LogIn from "./LogIN";
 import About from './About'
+import { Tools } from "./Tools";
 
 const config = [
   {
@@ -22,6 +23,13 @@ const config = [
   {
     component: About,
     path: "/about",
+    secure: false,
+    exact: true,
+    layout: DefaultLayouts,
+  },
+  {
+    component: Tools,
+    path: "/tools",
     secure: false,
     exact: true,
     layout: DefaultLayouts,
