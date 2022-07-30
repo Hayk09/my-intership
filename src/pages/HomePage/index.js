@@ -1,11 +1,116 @@
-import React from "react";
+import React, { useState } from "react";
+import { Box, Button, Grid } from "@mui/material";
+import { ListItem } from "../../components/ListItem";
 
+const Data = [
+  {
+    id: 1,
+    image:
+      "https://www.campostools.com/images/Fittings/hq/Homepage_Group_Images/472.jpg",
+    cost: "45$",
+    buyIcon: "BUY",
+    deleteicon: "DELETE",
+  },
+  {
+    id: 2,
+    image:
+      "	https://www.v-toolstore.com/media/image/09/75/7b/Estwing_Sure_Strike_3.jpg",
+    cost: "50$",
+    buyIcon: "BUY",
+    deleteicon: "DELETE",
+  },
+  {
+    id: 3,
+    image: "	https://m.media-amazon.com/images/I/51-sr6ZPwxL._SL1300_.jpg",
+    cost: "48$",
+    buyIcon: "BUY",
+    deleteicon: "DELETE",
+  },
+  {
+    id: 4,
+    image:
+      "https://cdn.hoffmann-group.com/derivatives/22655/jpg_1200/jpg_1200_b667072_4_2.jpg",
+    cost: "67$",
+    buyIcon: "BUY",
+    deleteicon: "DELETE",
+  },
+  {
+    id: 5,
+    image:
+      "	https://cdn.harttools.com/product/card_images/card/e4530e449e63467f96a637e15f4292af.webp",
+    cost: "95$",
+    buyIcon: "BUY",
+    deleteicon: "DELETE",
+  },
+  {
+    id: 6,
+    image:
+      "https://5.imimg.com/data5/QA/QT/MY-4418188/electrical-pliers-500x500.jpg",
+    cost: "55$",
+    buyIcon: "BUY",
+    deleteicon: "DELETE",
+  },
+  {
+    id: 7,
+    image:
+      "https://assets.mitre10.co.nz/sys-master/productimages/h50/h20/10491296907294/253454xlg.jpg",
+    cost: "53$",
+    buyIcon: "BUY",
+    deleteicon: "DELETE",
+  },
+  {
+    id: 8,
+    image:
+      "https://bynder.sbdinc.com/m/6a91ad9053328f7d/Drupal_Small-16-791_1.jpg",
+    cost: "65$",
+    buyIcon: "BUY",
+    deleteicon: "DELETE",
+  },
+  {
+    id: 9,
+    image:
+      "	https://atlas-content-cdn.pixelsquid.com/assets_v2/185/1854718250609285081/jpeg-600/G15.jpg",
+    cost: "35$",
+    buyIcon: "BUY",
+    deleteicon: "DELETE",
+  },
+];
 
 const HomePage = () => {
-    return(
-        <div>
-            HomePage
-        </div>
-    )
-}
-export default HomePage
+  const [value, setValue] = useState(Data);
+
+  // const [filters, setFilters] = useState(value);
+
+  const DeleteOneItem = (id) => {
+    setValue(value?.filter((item) => item.id !== id));
+  };
+
+  console.log(value, "value");
+
+  return (
+    <Box>
+      <Button onClick={() => setValue(null)}>All DELETE</Button>
+      <Grid
+        container
+        rowSpacing={1}
+        columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+        flexDirection="column"
+      >
+        {value?.map(({ id, image, cost, buyIcon, deleteicon }) => (
+          <Grid item xs={6}>
+            <ListItem
+              key={id}
+              image={image}
+              cost={cost}
+              buyIcon={buyIcon}
+              deleteicon={deleteicon}
+              id={id}
+              DeleteOneItem={DeleteOneItem}
+            />
+          </Grid>
+        ))}
+      </Grid>
+    </Box>
+  );
+};
+export default HomePage;

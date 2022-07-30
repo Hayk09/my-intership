@@ -25,11 +25,11 @@ const Footer = () => {
       <Box
         sx={{
           display: "flex",
-          mt: "100px",
           padding: "10px",
           boxShadow: "3",
           height: "190px",
           alignItems: "center",
+          mt: "50px",
         }}
       >
         <Box
@@ -79,11 +79,16 @@ const Footer = () => {
           mt: "-50px",
         }}
       >
-        <Link href="/about" sx={{ color: COLOR.yellow }}>
+        <Link href="/about" sx={{ color:"transparent" }}>
           <Tooltip title="You can find my location">
             <Button
               sx={{
                 color: COLOR.yellow,
+                transition: "0.6s",
+                borderRadius: BORDRADIUS.xl,
+                "&:hover": {
+                  boxShadow: 6,
+                },
               }}
             >
               About
@@ -157,16 +162,14 @@ const Footer = () => {
             </Tooltip>
           </Link>
           <Link href="https://www.whatsapp.com/?lang=ru://www.facebook.com/campaign/landing.php?campaign_id=1551277091&extra_1=s%7Cc%7C355201143755%7Ce%7Cfacebook%27%7C&placement=&creative=355201143755&keyword=facebook%27&partner_id=googlesem&extra_2=campaignid%3D1551277091%26adgroupid%3D58439965909%26matchtype%3De%26network%3Dg%26source%3Dnotmobile%26search_or_content%3Ds%26device%3Dc%26devicemodel%3D%26adposition%3D%26target%3D%26targetid%3Dkwd-362360550869%26loc_physical_ms%3D9070053%26loc_interest_ms%3D%26feeditemid%3D%26param1%3D%26param2%3D&gclid=Cj0KCQjw2MWVBhCQARIsAIjbwoOxZrod8Lpfjdk4xo0R5v9U-qeumzJHEk2GpLlGekrg8mURLF6AsNAaApX-EALw_wcB">
-           <Tooltip title="whatsApp">
-
-           
-            <ImageListItem
-              sx={{
-                width: "30px",
-              }}
-            >
-              <img src="https://conniescomfortsuites.com/wp-content/uploads/2018/03/WHATSAPP-LOGO.png" />
-            </ImageListItem>
+            <Tooltip title="whatsApp">
+              <ImageListItem
+                sx={{
+                  width: "30px",
+                }}
+              >
+                <img src="https://conniescomfortsuites.com/wp-content/uploads/2018/03/WHATSAPP-LOGO.png" />
+              </ImageListItem>
             </Tooltip>
           </Link>
         </Box>
