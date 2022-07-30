@@ -2,30 +2,54 @@ import DefaultLayouts from "../layouts/DefaultLayouts";
 import AuthLayout from "../layouts/AuthLayout";
 import HomePage from "./HomePage";
 import LogIn from "./LogIN";
-import About from './About'
+import Pricing from "./Pricing";
+import SignIn from "./SignIN";
+import Admin from "./Admin";
+import User from "./User";
 
 const config = [
   {
     component: HomePage,
-    path: "/",
+    path: '/',
     secure: false,
     exact: true,
     layout: AuthLayout,
-  },
-  {
+},
+{
     component: LogIn,
-    path: "/login",
+    path: '/login',
     secure: false,
     exact: true,
     layout: DefaultLayouts,
-  },
-  {
-    component: About,
-    path: "/about",
+},
+{
+    component: SignIn,
+    path: '/signIn',
     secure: false,
     exact: true,
     layout: DefaultLayouts,
-  },
+},
+{
+    component: Pricing,
+    path: '/pricing',
+    secure: false,
+    exact: true,
+    layout: DefaultLayouts,
+},
+{
+    component: User,
+    path: '/user',
+    secure: false,
+    exact: true,
+    layout: DefaultLayouts,
+},
+{
+    component: Admin,
+    path: '/admin',
+    secure: false,
+    exact: true,
+    layout: DefaultLayouts,
+}
 ];
 
 export default config;

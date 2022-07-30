@@ -11,17 +11,13 @@ import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 
- const LogIn = () => {
+ const SignIn = () => {
      const history = useHistory()
      const { register, handleSubmit, } = useForm()
      const onSubmit = (data) => {
         try{
-            window.localStorage.setItem("admin" , JSON.stringify(data))
-            if(data.Email === "admin@gmail.org" && data.Password === "admin13org" ){
-                 history.push("/admin")
-            }else{
-                history.push("/user")
-            }
+            window.localStorage.setItem("user" , JSON.stringify(data))
+            history.push("/user")
         }catch (error){
             alert("your login is not correct", error)
         }}
@@ -68,7 +64,7 @@ import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
                  justifyContent:"center",
                  mb:MARGINS.mb
              }}>
-             Sign Up
+             Sign In
              </Box>
              <form onSubmit={handleSubmit(onSubmit)}>
                  <Box sx={{
@@ -79,7 +75,7 @@ import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
                  boxShadow:"8",
                  borderRadius:BORDRADIUS.xxl,
                  width:"300px",
-                 height:"300px",
+                 height:"250px",
                  bgcolor:COLOR.yellow2,
                  mb:MARGINS.mb2
              }}>
@@ -93,24 +89,10 @@ import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
                  <Box sx={{
                      justifyContent:"center",
                      display:"flex",
-                     alignItems:"center"
+                     alignItems:"center",
+                     mb:MARGINS.mb3
                  }}>
                      <TextField label="Type Password" variant="standard" {...register("Password")} type="password"/>
-                 </Box>
-                 <Box sx={{
-                     justifyContent:"center",
-                     display:"flex",
-                     alignItems:"center"
-                 }}>
-                     <TextField label="Type your Last Name" variant="standard" {...register("LastName")} type="name"/>
-                 </Box>
-                 <Box sx={{
-                     justifyContent:"center",
-                     display:"flex",
-                     alignItems:"center",
-                     mb:MARGINS.mb2
-                 }}>
-                     <TextField label="Type your First Name" variant="standard" {...register("FirstName")} type="Name" />
                  </Box>
                  <Box sx={{
                      display:"flex",
@@ -118,16 +100,16 @@ import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
                  }}>
              <Button type="submit" sx={{
                  color:COLOR.orange2
-             }}>Sign Up</Button>
+             }}>Sign In</Button>
              </Box>
-             <Link href="signIn" underline="none">
+             <Link href="login" underline="none">
              <Box sx={{
                 fontFamily:FONTFAMILY.montserrat2,
                 color:COLOR.grey,
                 display:"flex",
                 justifyContent:"center",
              }}>
-                Go to the Sign In
+                Go to the Sign Up
              </Box>
              </Link>
              </Box>
@@ -230,4 +212,4 @@ import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
      )
  }
 
- export default LogIn
+ export default SignIn
