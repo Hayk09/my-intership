@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import { Box, Button, Grid } from "@mui/material";
 import { ListItem } from "../../components/ListItem";
+import {
+  COLOR,
+  FONTS,
+  FONTFAMILY,
+  MARGINS,
+  BORDRADIUS,
+} from "../../constant/index";
 
 const Data = [
   {
@@ -89,24 +96,40 @@ const HomePage = () => {
 
   return (
     <Box>
-      <Button onClick={() => setValue(null)}>All DELETE</Button>
+      <Button
+        sx={{
+          color: "red",
+          ml: "60px",
+          transition: "0.6s",
+          borderRadius: BORDRADIUS.xl,
+          mt: "50px",
+          boxShadow: 1,
+          "&:hover": {
+            boxShadow: 10,
+          },
+        }}
+        onClick={() => setValue(null)}
+      >
+        All DELETE
+      </Button>
       <Grid
         container
         rowSpacing={1}
         columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-        flexDirection="column"
-      >
+        flexDirection="column">
         {value?.map(({ id, image, cost, buyIcon, deleteicon }) => (
           <Grid item xs={6}>
-            <ListItem
-              key={id}
-              image={image}
-              cost={cost}
-              buyIcon={buyIcon}
-              deleteicon={deleteicon}
-              id={id}
-              DeleteOneItem={DeleteOneItem}
-            />
+            <Box>
+              <ListItem
+                key={id}
+                image={image}
+                cost={cost}
+                buyIcon={buyIcon}
+                deleteicon={deleteicon}
+                id={id}
+                DeleteOneItem={DeleteOneItem}
+              />
+            </Box>
           </Grid>
         ))}
       </Grid>
