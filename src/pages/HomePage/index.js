@@ -95,11 +95,10 @@ const HomePage = () => {
   console.log(value, "value");
 
   return (
-    <Box>
+    <Box sx={{ml:"100px"}}>
       <Button
         sx={{
           color: "red",
-          ml: "60px",
           transition: "0.6s",
           borderRadius: BORDRADIUS.xl,
           mt: "50px",
@@ -112,27 +111,33 @@ const HomePage = () => {
       >
         All DELETE
       </Button>
-      <Grid
-        container
-        rowSpacing={1}
-        columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-        flexDirection="column">
-        {value?.map(({ id, image, cost, buyIcon, deleteicon }) => (
-          <Grid item xs={6}>
-            <Box>
-              <ListItem
-                key={id}
-                image={image}
-                cost={cost}
-                buyIcon={buyIcon}
-                deleteicon={deleteicon}
-                id={id}
-                DeleteOneItem={DeleteOneItem}
-              />
-            </Box>
-          </Grid>
-        ))}
-      </Grid>
+      <Box
+        sx={{
+          width: "100%",
+          height: "100%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <Grid container rowSpacing={2}>
+          {value?.map(({ id, image, cost, buyIcon, deleteicon }) => (
+            <Grid item xs={4}>
+              <Box>
+                <ListItem
+                  key={id}
+                  image={image}
+                  cost={cost}
+                  buyIcon={buyIcon}
+                  deleteicon={deleteicon}
+                  id={id}
+                  DeleteOneItem={DeleteOneItem}
+                />
+              </Box>
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
     </Box>
   );
 };

@@ -20,13 +20,13 @@ import { CssBaseline } from "@mui/material";
 
 const Footer = () => {
   return (
-    <Box>
+    <Box sx={{position:"sticky",top:"0",display:"block"}}>
       <CssBaseline />
       <Box
         sx={{
           display: "flex",
           padding: "10px",
-          boxShadow: "3",
+          boxShadow: "4",
           height: "190px",
           alignItems: "center",
           mt: "50px",
