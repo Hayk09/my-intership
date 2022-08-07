@@ -3,30 +3,28 @@ import {
     Box, 
     Button,
     TextField,
-    Tooltip,
     ImageListItem,
     Link
  } from "@mui/material";
  import {COLOR,FONTS,FONTFAMILY,BORDRADIUS,MARGINS} from '../../constant/index'
- import UndoIcon from '@mui/icons-material/Undo';
 import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 
  const LogIn = () => {
      const history = useHistory()
-     const { register, handleSubmit, formState: { errors }} = useForm()
+     const { register, handleSubmit, } = useForm()
      const onSubmit = (data) => {
-         try{
-             window.localStorage.setItem("user" , JSON.stringify(data))
-             if(data.Email !== data.tryEmail ){
-                 console.log("false");
-             }else{
-                 console.log("true");
-             }
-         }catch (errors){
-             alert("your login is not correct", errors)
-         }
-        }
+        try{
+            window.localStorage.setItem("admin" , JSON.stringify(data))
+            if(data.Email === "admin@gmail.org" && data.Password === "admin13org" ){
+                 history.push("/admin")
+            }else{
+                history.push("/user")
+            }
+        }catch (error){
+            alert("your login is not correct", error)
+        }}
      return(
          <Box>
              <Box sx={{
@@ -36,31 +34,31 @@ import { useForm } from "react-hook-form";
              <Box sx={{
                  color:COLOR.grey,
                  fontFamily:FONTFAMILY.lobster,
-                 fontSize:FONTS.body3
+                 fontSize:FONTS.body3,
+                 mb:MARGINS.mb2,
+                 cursor:"pointer"
+             }} onClick={() => {
+                history.push("/")
              }}>
                  G
              </Box>
              <Box sx={{
                  color:COLOR.yellow,
                  fontFamily:FONTFAMILY.lobster,
-                 fontSize:FONTS.body3
+                 fontSize:FONTS.body3,
+                 cursor:"pointer"
+             }} onClick={() => {
+                history.push("/")
              }}>
                  S
              </Box>
              </Box>
              <Box sx={{
-                 display:"flex",
-                 justifyContent:"center",
+                display:"flex",
+                justifyContent:"center",
+                color:COLOR.grey
              }}>
-            <Tooltip title="Go to the Homepage">
-             <Button sx={{
-                 color:COLOR.orange
-             }} onClick={() => (
-                 history.push("/")
-             )}>
-                 <UndoIcon/>
-             </Button>
-             </Tooltip>
+                <ManageAccountsIcon />
              </Box>
              <Box sx={{
                  fontFamily:FONTFAMILY.montserrat2,
@@ -90,21 +88,21 @@ import { useForm } from "react-hook-form";
                      display:"flex",
                      alignItems:"center"
                  }}>
-                     <TextField  label="Type Email" variant="standard" {...register("Email")} />
+                     <TextField  label="Type Email" variant="standard" {...register("Email")} type="email" />
                  </Box>
                  <Box sx={{
                      justifyContent:"center",
                      display:"flex",
                      alignItems:"center"
                  }}>
-                     <TextField label="Type your Email again" variant="standard" {...register("tryEmail")}/>
+                     <TextField label="Type Password" variant="standard" {...register("Password")} type="password"/>
                  </Box>
                  <Box sx={{
                      justifyContent:"center",
                      display:"flex",
                      alignItems:"center"
                  }}>
-                     <TextField label="Type Password" variant="standard" {...register("Password")}/>
+                     <TextField label="Type your Last Name" variant="standard" {...register("LastName")} type="name"/>
                  </Box>
                  <Box sx={{
                      justifyContent:"center",
@@ -112,7 +110,7 @@ import { useForm } from "react-hook-form";
                      alignItems:"center",
                      mb:MARGINS.mb2
                  }}>
-                     <TextField label="Type your Password again" variant="standard" {...register("tryPassword")}/>
+                     <TextField label="Type your First Name" variant="standard" {...register("FirstName")} type="Name" />
                  </Box>
                  <Box sx={{
                      display:"flex",
@@ -120,8 +118,18 @@ import { useForm } from "react-hook-form";
                  }}>
              <Button type="submit" sx={{
                  color:COLOR.orange2
-             }}>Submit</Button>
+             }}>Sign Up</Button>
              </Box>
+             <Link href="signIn" underline="none">
+             <Box sx={{
+                fontFamily:FONTFAMILY.montserrat2,
+                color:COLOR.grey,
+                display:"flex",
+                justifyContent:"center",
+             }}>
+                Go to the Sign In
+             </Box>
+             </Link>
              </Box>
              </Box>
              </form>
