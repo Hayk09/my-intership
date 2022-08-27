@@ -11,7 +11,7 @@ import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 
- const LogIn = () => {
+ const SignIN = () => {
      const history = useHistory()
      const { register, handleSubmit, } = useForm()
      const onSubmit = (data) => {
@@ -68,7 +68,7 @@ import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
                  justifyContent:"center",
                  mb:MARGINS.mb
              }}>
-             Sign Up
+             Sign In
              </Box>
              <form onSubmit={handleSubmit(onSubmit)}>
                  <Box sx={{
@@ -98,36 +98,22 @@ import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
                      <TextField label="Type Password" variant="standard" {...register("Password")} type="password"/>
                  </Box>
                  <Box sx={{
-                     justifyContent:"center",
-                     display:"flex",
-                     alignItems:"center"
-                 }}>
-                     <TextField label="Type your Last Name" variant="standard" {...register("LastName")} type="name"/>
-                 </Box>
-                 <Box sx={{
-                     justifyContent:"center",
-                     display:"flex",
-                     alignItems:"center",
-                     mb:MARGINS.mb2
-                 }}>
-                     <TextField label="Type your First Name" variant="standard" {...register("FirstName")} type="Name" />
-                 </Box>
-                 <Box sx={{
                      display:"flex",
                      justifyContent:"center"
                  }}>
              <Button type="submit" sx={{
-                 color:COLOR.orange2
-             }}>Sign Up</Button>
+                 color:COLOR.orange2,
+             }}>Sign IN</Button>
              </Box>
-             <Link href="signIn" underline="none">
+             <Link href="login" underline="none">
              <Box sx={{
                 fontFamily:FONTFAMILY.montserrat2,
                 color:COLOR.grey,
                 display:"flex",
                 justifyContent:"center",
+                mt:"100px",
              }}>
-                Go to the Sign In
+                Go to the SignUP
              </Box>
              </Link>
              </Box>
@@ -230,4 +216,4 @@ import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
      )
  }
 
- export default LogIn
+ export default SignIN

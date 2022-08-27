@@ -4,6 +4,8 @@ import HomePage from "./HomePage";
 import LogIn from "./LogIN";
 import About from './About'
 import { Tools } from "./Tools";
+import SignIN from "./SignIN";
+
 
 const config = [
   {
@@ -34,6 +36,13 @@ const config = [
     exact: true,
     layout: DefaultLayouts,
   },
+  {
+    component: SignIN,
+    path: "/signIn",
+    secure: false,
+    exact: true,
+    layout: DefaultLayouts,
+  }
 ];
 
 export default config;
