@@ -29,6 +29,7 @@ export const ListItem = ({
           width: "300px",
           height: "350px",
           mt: "50px",
+          ml:"1px"
         }}
       >
         <ImageListItem
