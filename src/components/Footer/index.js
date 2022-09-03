@@ -29,7 +29,7 @@ const Footer = () => {
           boxShadow: "4",
           height: "190px",
           alignItems: "center",
-          mt: "50px",
+          mt: "100px",
         }}
       >
         <Box
