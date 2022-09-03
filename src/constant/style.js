@@ -45,7 +45,10 @@ export const MARGINS = {
   mt:"6px",
   mt2:"-10px",
   mt3:"15px",
+  mt4:"50px",
+  mt5:"30px",
   ml:"15px",
   mb:"70px",
-  mb2:"20px"
+  mb2:"20px",
+  mb3:"30px"
 }

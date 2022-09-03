@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Button, Grid } from "@mui/material";
+import { Box, Button, Grid, TextField } from "@mui/material";
 import { ListItem } from "../../components/ListItem";
 import {
   COLOR,
@@ -17,6 +17,7 @@ const Data = [
     cost: "45$",
     buyIcon: "BUY",
     deleteicon: "DELETE",
+    text:"Kluch"
   },
   {
     id: 2,
@@ -25,6 +26,7 @@ const Data = [
     cost: "50$",
     buyIcon: "BUY",
     deleteicon: "DELETE",
+    text:"Hammer"
   },
   {
     id: 3,
@@ -32,6 +34,7 @@ const Data = [
     cost: "48$",
     buyIcon: "BUY",
     deleteicon: "DELETE",
+    text:"Axe"
   },
   {
     id: 4,
@@ -40,6 +43,7 @@ const Data = [
     cost: "67$",
     buyIcon: "BUY",
     deleteicon: "DELETE",
+    text:"Axe"
   },
   {
     id: 5,
@@ -48,6 +52,7 @@ const Data = [
     cost: "95$",
     buyIcon: "BUY",
     deleteicon: "DELETE",
+    text:"Power"
   },
   {
     id: 6,
@@ -56,6 +61,7 @@ const Data = [
     cost: "55$",
     buyIcon: "BUY",
     deleteicon: "DELETE",
+    text:"Electrician"
   },
   {
     id: 7,
@@ -64,6 +70,7 @@ const Data = [
     cost: "53$",
     buyIcon: "BUY",
     deleteicon: "DELETE",
+    text:"axe"
   },
   {
     id: 8,
@@ -72,6 +79,7 @@ const Data = [
     cost: "65$",
     buyIcon: "BUY",
     deleteicon: "DELETE",
+    text:"axe"
   },
   {
     id: 9,
@@ -80,28 +88,38 @@ const Data = [
     cost: "35$",
     buyIcon: "BUY",
     deleteicon: "DELETE",
+    text:"Pickaxe"
   },
 ];
+
+// https://thumbs.dreamstime.com/b/building-tools-background-isolated-white-144760801.jpg
 
 const HomePage = () => {
   const [value, setValue] = useState(Data);
 
-  // const [filters, setFilters] = useState(value);
+  const [textfilter, setTextfilter] = useState("");
 
   const DeleteOneItem = (id) => {
     setValue(value?.filter((item) => item.id !== id));
   };
 
-  console.log(value, "value");
+// console.log(text);
+
+  // console.log(value, "value");
 
   return (
-    <Box sx={{ml:"100px"}}>
+    <Box
+      sx={{
+       ml:"150px"
+      }}
+    >
       <Button
         sx={{
           color: "red",
           transition: "0.6s",
           borderRadius: BORDRADIUS.xl,
-          mt: "50px",
+          mt: "40px",
+          ml:"40px",
           boxShadow: 1,
           "&:hover": {
             boxShadow: 10,
@@ -111,6 +129,15 @@ const HomePage = () => {
       >
         All DELETE
       </Button>
+      <TextField
+      sx={{
+        ml:"100px",
+        mt:"30px",
+        bgcolor:COLOR.yellow,
+      }}
+      onChange= {(even) => setTextfilter(even.target.value)}
+       placeholder="Search"
+       />
       <Box
         sx={{
           width: "100%",
@@ -121,7 +148,8 @@ const HomePage = () => {
         }}
       >
         <Grid container rowSpacing={2}>
-          {value?.map(({ id, image, cost, buyIcon, deleteicon }) => (
+          {value?.filter((item) => item?.text?.toLowerCase().includes(textfilter?.toLocaleLowerCase())).
+          map(({ id, image, cost, buyIcon, deleteicon,text }) => (
             <Grid item xs={4}>
               <Box>
                 <ListItem
@@ -132,6 +160,7 @@ const HomePage = () => {
                   deleteicon={deleteicon}
                   id={id}
                   DeleteOneItem={DeleteOneItem}
+                  text={text}
                 />
               </Box>
             </Grid>

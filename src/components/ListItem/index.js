@@ -10,6 +10,7 @@ import {
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import DeleteIcon from "@mui/icons-material/Delete";
 
+
 export const ListItem = ({
   id,
   image,
@@ -17,6 +18,7 @@ export const ListItem = ({
   buyIcon,
   deleteicon,
   DeleteOneItem,
+  text,
 }) => {
   return (
     <Box>
@@ -29,6 +31,9 @@ export const ListItem = ({
           width: "300px",
           height: "350px",
           mt: "50px",
+          "&:hover": {
+            boxShadow: 15,
+          },
         }}
       >
         <ImageListItem
@@ -69,6 +74,7 @@ export const ListItem = ({
               boxShadow: 10,
             },
           }}
+          onClick={() => (alert("You want buy this?"))}
         >
           <AddShoppingCartIcon sx={{ color: "green" }} />
           {buyIcon}
@@ -83,7 +89,19 @@ export const ListItem = ({
         >
           {cost}
         </Box>
-        <Stack direction="row">
+        <Box
+          sx={{
+            ml: "50px",
+            mt: "6px",
+            color: COLOR.yellow,
+            width: "100px",
+          }}
+        >
+          {text}
+          
+        </Box>
+      
+        {/* <Stack direction="row">
           <Box
             sx={{
               display: "flex",
@@ -115,7 +133,7 @@ export const ListItem = ({
           >
             GS
           </Box>
-        </Stack>
+        </Stack> */}
       </Box>
     </Box>
   );
