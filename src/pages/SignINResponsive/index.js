@@ -154,7 +154,7 @@ import { useForm } from "react-hook-form";
             </Typography>
           </Divider>
           </Box>
-             <Link href="signIn" underline="none">
+             <Link href="signUp" underline="none">
              <Box sx={{
                 fontFamily:FONTFAMILY.montserrat2,
                 color:COLOR.grey,
