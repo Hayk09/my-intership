@@ -4,7 +4,7 @@ import HomePage from "./HomePage";
 import LogIn from "./LogIN";
 import About from './About'
 import { Tools } from "./Tools";
-import SignIN from "./SignIN";
+import SignUP from "./SignUP";
 
 
 const config = [
@@ -37,8 +37,8 @@ const config = [
     layout: DefaultLayouts,
   },
   {
-    component: SignIN,
-    path: "/signIn",
+    component: SignUP,
+    path: "/signUp",
     secure: false,
     exact: true,
     layout: DefaultLayouts,
