@@ -17,6 +17,7 @@ const Data = [
     cost: "45$",
     buyIcon: "BUY",
     deleteicon: "DELETE",
+    add:"ADD"
   },
   {
     id: 2,
@@ -25,6 +26,7 @@ const Data = [
     cost: "50$",
     buyIcon: "BUY",
     deleteicon: "DELETE",
+    add:"ADD"
   },
   {
     id: 3,
@@ -32,6 +34,7 @@ const Data = [
     cost: "48$",
     buyIcon: "BUY",
     deleteicon: "DELETE",
+    add:"ADD"
   },
   {
     id: 4,
@@ -40,6 +43,7 @@ const Data = [
     cost: "67$",
     buyIcon: "BUY",
     deleteicon: "DELETE",
+    add:"ADD"
   },
   {
     id: 5,
@@ -48,6 +52,7 @@ const Data = [
     cost: "95$",
     buyIcon: "BUY",
     deleteicon: "DELETE",
+    add:"ADD"
   },
   {
     id: 6,
@@ -56,6 +61,7 @@ const Data = [
     cost: "55$",
     buyIcon: "BUY",
     deleteicon: "DELETE",
+    add:"ADD"
   },
   {
     id: 7,
@@ -64,6 +70,7 @@ const Data = [
     cost: "53$",
     buyIcon: "BUY",
     deleteicon: "DELETE",
+    add:"ADD"
   },
   {
     id: 8,
@@ -72,6 +79,7 @@ const Data = [
     cost: "65$",
     buyIcon: "BUY",
     deleteicon: "DELETE",
+    add:"ADD"
   },
   {
     id: 9,
@@ -80,6 +88,7 @@ const Data = [
     cost: "35$",
     buyIcon: "BUY",
     deleteicon: "DELETE",
+    add:"ADD"
   },
 ];
 
@@ -121,7 +130,7 @@ const HomePage = () => {
         }}
       >
         <Grid container rowSpacing={2}>
-          {value?.map(({ id, image, cost, buyIcon, deleteicon }) => (
+          {value?.map(({ id, image, cost, buyIcon, deleteicon ,add}) => (
             <Grid item xs={4}>
               <Box>
                 <ListItem
@@ -132,6 +141,7 @@ const HomePage = () => {
                   deleteicon={deleteicon}
                   id={id}
                   DeleteOneItem={DeleteOneItem}
+                  add={add}
                 />
               </Box>
             </Grid>

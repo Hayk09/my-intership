@@ -9,6 +9,8 @@ import {
 } from "../../constant/index";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import DeleteIcon from "@mui/icons-material/Delete";
+import AddIcon from "@mui/icons-material/Add";
+import { Link } from "react-router-dom";
 
 export const ListItem = ({
   id,
@@ -17,6 +19,7 @@ export const ListItem = ({
   buyIcon,
   deleteicon,
   DeleteOneItem,
+  add,
 }) => {
   return (
     <Box>
@@ -27,9 +30,9 @@ export const ListItem = ({
           fontFamily: FONTFAMILY.montserrat,
           boxShadow: "5",
           width: "300px",
-          height: "350px",
+          height: "400px",
           mt: "50px",
-          ml:"1px"
+          ml: "1px",
         }}
       >
         <ImageListItem
@@ -45,6 +48,7 @@ export const ListItem = ({
         <Button
           sx={{
             color: "red",
+            mt: "50px",
             ml: "110px",
             transition: "0.6s",
             borderRadius: BORDRADIUS.xl,
@@ -84,6 +88,24 @@ export const ListItem = ({
         >
           {cost}
         </Box>
+        <Link to="/Add">
+          <Button
+            sx={{
+              color: "orange",
+              ml: "210px",
+              mt: "10px",
+              transition: "0.6s",
+              borderRadius: BORDRADIUS.xl,
+              boxShadow: 1,
+              "&:hover": {
+                boxShadow: 10,
+              },
+            }}
+          >
+            {add}
+            <AddIcon />
+          </Button>
+        </Link>
         <Stack direction="row">
           <Box
             sx={{

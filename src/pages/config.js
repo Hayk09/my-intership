@@ -5,6 +5,7 @@ import LogIn from "./LogIN";
 import About from './About'
 import { Tools } from "./Tools";
 import SignIN from "./SignIN";
+import Add from "./Add"
 
 
 const config = [
@@ -39,6 +40,13 @@ const config = [
   {
     component: SignIN,
     path: "/signIn",
+    secure: false,
+    exact: true,
+    layout: DefaultLayouts,
+  },
+  {
+    component: Add,
+    path: "/Add",
     secure: false,
     exact: true,
     layout: DefaultLayouts,
