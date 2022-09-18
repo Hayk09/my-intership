@@ -17,7 +17,11 @@ const Data = [
     cost: "45$",
     buyIcon: "BUY",
     deleteicon: "DELETE",
+<<<<<<< HEAD
+    add:"ADD"
+=======
     text:"Kluch"
+>>>>>>> 194c1f0f931d7827d6542b3d6cb86e777c0fdfbd
   },
   {
     id: 2,
@@ -26,7 +30,11 @@ const Data = [
     cost: "50$",
     buyIcon: "BUY",
     deleteicon: "DELETE",
+<<<<<<< HEAD
+    add:"ADD"
+=======
     text:"Hammer"
+>>>>>>> 194c1f0f931d7827d6542b3d6cb86e777c0fdfbd
   },
   {
     id: 3,
@@ -34,7 +42,11 @@ const Data = [
     cost: "48$",
     buyIcon: "BUY",
     deleteicon: "DELETE",
+<<<<<<< HEAD
+    add:"ADD"
+=======
     text:"Axe"
+>>>>>>> 194c1f0f931d7827d6542b3d6cb86e777c0fdfbd
   },
   {
     id: 4,
@@ -43,7 +55,11 @@ const Data = [
     cost: "67$",
     buyIcon: "BUY",
     deleteicon: "DELETE",
+<<<<<<< HEAD
+    add:"ADD"
+=======
     text:"Axe"
+>>>>>>> 194c1f0f931d7827d6542b3d6cb86e777c0fdfbd
   },
   {
     id: 5,
@@ -52,7 +68,11 @@ const Data = [
     cost: "95$",
     buyIcon: "BUY",
     deleteicon: "DELETE",
+<<<<<<< HEAD
+    add:"ADD"
+=======
     text:"Power"
+>>>>>>> 194c1f0f931d7827d6542b3d6cb86e777c0fdfbd
   },
   {
     id: 6,
@@ -61,7 +81,11 @@ const Data = [
     cost: "55$",
     buyIcon: "BUY",
     deleteicon: "DELETE",
+<<<<<<< HEAD
+    add:"ADD"
+=======
     text:"Electrician"
+>>>>>>> 194c1f0f931d7827d6542b3d6cb86e777c0fdfbd
   },
   {
     id: 7,
@@ -70,7 +94,11 @@ const Data = [
     cost: "53$",
     buyIcon: "BUY",
     deleteicon: "DELETE",
+<<<<<<< HEAD
+    add:"ADD"
+=======
     text:"axe"
+>>>>>>> 194c1f0f931d7827d6542b3d6cb86e777c0fdfbd
   },
   {
     id: 8,
@@ -79,7 +107,11 @@ const Data = [
     cost: "65$",
     buyIcon: "BUY",
     deleteicon: "DELETE",
+<<<<<<< HEAD
+    add:"ADD"
+=======
     text:"axe"
+>>>>>>> 194c1f0f931d7827d6542b3d6cb86e777c0fdfbd
   },
   {
     id: 9,
@@ -88,7 +120,11 @@ const Data = [
     cost: "35$",
     buyIcon: "BUY",
     deleteicon: "DELETE",
+<<<<<<< HEAD
+    add:"ADD"
+=======
     text:"Pickaxe"
+>>>>>>> 194c1f0f931d7827d6542b3d6cb86e777c0fdfbd
   },
 ];
 
@@ -148,8 +184,12 @@ const HomePage = () => {
         }}
       >
         <Grid container rowSpacing={2}>
+<<<<<<< HEAD
+          {value?.map(({ id, image, cost, buyIcon, deleteicon ,add}) => (
+=======
           {value?.filter((item) => item?.text?.toLowerCase().includes(textfilter?.toLocaleLowerCase())).
           map(({ id, image, cost, buyIcon, deleteicon,text }) => (
+>>>>>>> 194c1f0f931d7827d6542b3d6cb86e777c0fdfbd
             <Grid item xs={4}>
               <Box>
                 <ListItem
@@ -160,7 +200,11 @@ const HomePage = () => {
                   deleteicon={deleteicon}
                   id={id}
                   DeleteOneItem={DeleteOneItem}
+<<<<<<< HEAD
+                  add={add}
+=======
                   text={text}
+>>>>>>> 194c1f0f931d7827d6542b3d6cb86e777c0fdfbd
                 />
               </Box>
             </Grid>

@@ -4,7 +4,12 @@ import HomePage from "./HomePage";
 import LogIn from "./LogIN";
 import About from './About'
 import { Tools } from "./Tools";
+<<<<<<< HEAD
+import SignIN from "./SignIN";
+import Add from "./Add"
+=======
 import SignUP from "./SignUP";
+>>>>>>> 194c1f0f931d7827d6542b3d6cb86e777c0fdfbd
 
 
 const config = [
@@ -39,6 +44,13 @@ const config = [
   {
     component: SignUP,
     path: "/signUp",
+    secure: false,
+    exact: true,
+    layout: DefaultLayouts,
+  },
+  {
+    component: Add,
+    path: "/Add",
     secure: false,
     exact: true,
     layout: DefaultLayouts,
