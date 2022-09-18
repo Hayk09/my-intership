@@ -20,6 +20,7 @@ export const ListItem = ({
   buyIcon,
   deleteicon,
   DeleteOneItem,
+  text
 }) => {
   return (
     <Box>

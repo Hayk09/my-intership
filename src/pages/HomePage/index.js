@@ -17,11 +17,10 @@ const Data = [
     cost: "45$",
     buyIcon: "BUY",
     deleteicon: "DELETE",
-<<<<<<< HEAD
-    add:"ADD"
-=======
-    text:"Kluch"
->>>>>>> 194c1f0f931d7827d6542b3d6cb86e777c0fdfbd
+
+    add: "ADD",
+
+    text: "Kluch",
   },
   {
     id: 2,
@@ -30,11 +29,10 @@ const Data = [
     cost: "50$",
     buyIcon: "BUY",
     deleteicon: "DELETE",
-<<<<<<< HEAD
-    add:"ADD"
-=======
-    text:"Hammer"
->>>>>>> 194c1f0f931d7827d6542b3d6cb86e777c0fdfbd
+
+    add: "ADD",
+
+    text: "Hammer",
   },
   {
     id: 3,
@@ -42,11 +40,10 @@ const Data = [
     cost: "48$",
     buyIcon: "BUY",
     deleteicon: "DELETE",
-<<<<<<< HEAD
-    add:"ADD"
-=======
-    text:"Axe"
->>>>>>> 194c1f0f931d7827d6542b3d6cb86e777c0fdfbd
+
+    add: "ADD",
+
+    text: "Axe",
   },
   {
     id: 4,
@@ -55,11 +52,10 @@ const Data = [
     cost: "67$",
     buyIcon: "BUY",
     deleteicon: "DELETE",
-<<<<<<< HEAD
-    add:"ADD"
-=======
-    text:"Axe"
->>>>>>> 194c1f0f931d7827d6542b3d6cb86e777c0fdfbd
+
+    add: "ADD",
+
+    text: "Axe",
   },
   {
     id: 5,
@@ -68,11 +64,10 @@ const Data = [
     cost: "95$",
     buyIcon: "BUY",
     deleteicon: "DELETE",
-<<<<<<< HEAD
-    add:"ADD"
-=======
-    text:"Power"
->>>>>>> 194c1f0f931d7827d6542b3d6cb86e777c0fdfbd
+
+    add: "ADD",
+
+    text: "Power",
   },
   {
     id: 6,
@@ -81,11 +76,10 @@ const Data = [
     cost: "55$",
     buyIcon: "BUY",
     deleteicon: "DELETE",
-<<<<<<< HEAD
-    add:"ADD"
-=======
-    text:"Electrician"
->>>>>>> 194c1f0f931d7827d6542b3d6cb86e777c0fdfbd
+
+    add: "ADD",
+
+    text: "Electrician",
   },
   {
     id: 7,
@@ -94,11 +88,10 @@ const Data = [
     cost: "53$",
     buyIcon: "BUY",
     deleteicon: "DELETE",
-<<<<<<< HEAD
-    add:"ADD"
-=======
-    text:"axe"
->>>>>>> 194c1f0f931d7827d6542b3d6cb86e777c0fdfbd
+
+    add: "ADD",
+
+    text: "axe",
   },
   {
     id: 8,
@@ -107,11 +100,10 @@ const Data = [
     cost: "65$",
     buyIcon: "BUY",
     deleteicon: "DELETE",
-<<<<<<< HEAD
-    add:"ADD"
-=======
-    text:"axe"
->>>>>>> 194c1f0f931d7827d6542b3d6cb86e777c0fdfbd
+
+    add: "ADD",
+
+    text: "axe",
   },
   {
     id: 9,
@@ -120,11 +112,10 @@ const Data = [
     cost: "35$",
     buyIcon: "BUY",
     deleteicon: "DELETE",
-<<<<<<< HEAD
-    add:"ADD"
-=======
-    text:"Pickaxe"
->>>>>>> 194c1f0f931d7827d6542b3d6cb86e777c0fdfbd
+
+    add: "ADD",
+
+    text: "Pickaxe",
   },
 ];
 
@@ -139,14 +130,14 @@ const HomePage = () => {
     setValue(value?.filter((item) => item.id !== id));
   };
 
-// console.log(text);
+  // console.log(text);
 
   // console.log(value, "value");
 
   return (
     <Box
       sx={{
-       ml:"150px"
+        ml: "150px",
       }}
     >
       <Button
@@ -155,7 +146,7 @@ const HomePage = () => {
           transition: "0.6s",
           borderRadius: BORDRADIUS.xl,
           mt: "40px",
-          ml:"40px",
+          ml: "40px",
           boxShadow: 1,
           "&:hover": {
             boxShadow: 10,
@@ -166,14 +157,14 @@ const HomePage = () => {
         All DELETE
       </Button>
       <TextField
-      sx={{
-        ml:"100px",
-        mt:"30px",
-        bgcolor:COLOR.yellow,
-      }}
-      onChange= {(even) => setTextfilter(even.target.value)}
-       placeholder="Search"
-       />
+        sx={{
+          ml: "100px",
+          mt: "30px",
+          bgcolor: COLOR.yellow,
+        }}
+        onChange={(even) => setTextfilter(even.target.value)}
+        placeholder="Search"
+      />
       <Box
         sx={{
           width: "100%",
@@ -184,31 +175,29 @@ const HomePage = () => {
         }}
       >
         <Grid container rowSpacing={2}>
-<<<<<<< HEAD
-          {value?.map(({ id, image, cost, buyIcon, deleteicon ,add}) => (
-=======
-          {value?.filter((item) => item?.text?.toLowerCase().includes(textfilter?.toLocaleLowerCase())).
-          map(({ id, image, cost, buyIcon, deleteicon,text }) => (
->>>>>>> 194c1f0f931d7827d6542b3d6cb86e777c0fdfbd
-            <Grid item xs={4}>
-              <Box>
-                <ListItem
-                  key={id}
-                  image={image}
-                  cost={cost}
-                  buyIcon={buyIcon}
-                  deleteicon={deleteicon}
-                  id={id}
-                  DeleteOneItem={DeleteOneItem}
-<<<<<<< HEAD
-                  add={add}
-=======
-                  text={text}
->>>>>>> 194c1f0f931d7827d6542b3d6cb86e777c0fdfbd
-                />
-              </Box>
-            </Grid>
-          ))}
+          {value
+            ?.filter((item) =>
+              item?.text
+                ?.toLowerCase()
+                .includes(textfilter?.toLocaleLowerCase())
+            )
+            .map(({ id, image, cost, buyIcon, deleteicon, text, add }) => (
+              <Grid item xs={4}>
+                <Box>
+                  <ListItem
+                    key={id}
+                    image={image}
+                    cost={cost}
+                    buyIcon={buyIcon}
+                    deleteicon={deleteicon}
+                    id={id}
+                    DeleteOneItem={DeleteOneItem}
+                    add={add}
+                    text={text}
+                  />
+                </Box>
+              </Grid>
+            ))}
         </Grid>
       </Box>
     </Box>
