@@ -3,17 +3,17 @@ import {
     Box, 
     Button,
     TextField,
+    ImageListItem,
     Link,
     Divider,
-    Typography,
-    ImageListItem
+    Typography
  } from "@mui/material";
- import {COLOR,FONTS,FONTFAMILY,MARGINS,BORDRADIUS} from '../../constant/index'
+ import {COLOR,FONTS,FONTFAMILY,BORDRADIUS,MARGINS} from '../../constant/index'
 import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import SignInResponsive from "../SignINResponsive";
 
- const LogIn = () => {
+
+ const SignUpResponsive = () => {
      const history = useHistory()
      const { register, handleSubmit, } = useForm()
      const onSubmit = (data) => {
@@ -28,27 +28,25 @@ import SignInResponsive from "../SignINResponsive";
             alert("your login is not correct", error)
         }}
      return(
-        <Box   >
-            <SignInResponsive />
-        <Box display={{ xs: "none", md: "hidden" }} sx={{
-            justifyContent:"center"
-        }}>
-          <form onSubmit={handleSubmit(onSubmit)}>
-          <Box sx={{
+         <Box display={{ sm: "hidden", md: "none" }} sx={{
+            justifyContent:"center",
+         }}>
+            <Box >
+            <Box sx={{
                 justifyContent:"center",
-                display:"flex"
+                display:"flex",
             }}>
              <Box sx={{
                  border:"15px solid white",
-                 width:"200px",
-                 height:"200px",
+                 width:"150px",
+                 height:"150px",
                  bgcolor:"#ffab00",
                  borderRadius:"200px",
-                 mt:"10px",
+                 mt:"60px",
                  position:"absolute"
              }}>
               <Box sx={{
-                  mt:"60px",
+                  mt:"30px",
                   display:"flex",
                   borderRadius:"50px",
                   justifyContent:"center",
@@ -83,78 +81,72 @@ import SignInResponsive from "../SignINResponsive";
               justifyContent:"center",
               mb:MARGINS.mb
           }}>
-          Sign In
+          Sign Up
           </Box>
               </Box>
               </Box>
-            <Box sx={{
-                display:"flex",
-                justifyContent:"center",
-                alignItems:"center",
-                height:"700px"
-            }}>
-          <Box sx={{
-              boxShadow:"8",
-              width:"760px",
-              height:"500px",
-              backgroundImage: "linear-gradient(to right, #ffab00, #ffe082, #ffc400)",
-              borderRadius:"40px",
-          }}>
-              <Box sx={{
-                 display:"flex",
-                 justifyContent:"center",
-                 alignItems:"center",
-                 width:"450px",
-                 height:"100px"
-              }}>
-              <Box sx={{
-                  width:"400px",
-                  mt:"240px"
-              }}>
-                  <TextField  label="Type Email" variant="filled" {...register("Email")} type="email"/>
-              </Box>
-              </Box>
-              <Box sx={{
-                display:"flex",
-                justifyContent:"center",
-                alignItems:"center",
-                width:"450px"
-              }}>
-              <Box sx={{
-                  width:"400px",
-                  mt:"120px",
-                  mb:MARGINS.mb2
-              }}>
-                  <TextField label="Type Password" variant="filled" {...register("Password")} type="password" autoComplete="correct-passord"/>
-              </Box>
-              </Box>
-              <Box sx={{
-                  display:"flex",
-                  justifyContent:"center",
-                  alignItems:"center",
-                  width:"270px"
-              }}>
-          <Button type="submit" sx={{
-               color:COLOR.grey,
-               width:"200px",
-               transition:"0.8s",
-               bgcolor:COLOR.yellow2,
-               boxShadow:"4",
-               borderRadius:"30px",
-               "&:hover":{
-                transform: "translateY(-10px)",
-                bgcolor: COLOR.yellow,  
-                  color:COLOR.grey,
-                  boxShadow:"8",
-                  borderRadius: "100px",
-          
-               }
-          }}>Sign IN</Button>
-          </Box>
-          <Box sx={{
+             <form onSubmit={handleSubmit(onSubmit)}>
+                 <Box sx={{
+                     display:"flex",
+                     justifyContent:"center",
+                     alignItems:"center",
+                     height:"800px"
+                 }}>
+             <Box sx={{
+                 boxShadow:"8",
+                 borderRadius:BORDRADIUS.xxl,
+                 width:"300px",
+                 height:"420px",
+                 backgroundImage: "linear-gradient(to right, #ffab00, #ffe082, #ffc400)",
+             }}>
+                 <Box sx={{
+                     justifyContent:"center",
+                     display:"flex",
+                     alignItems:"center",
+                     mt:MARGINS.mt4
+                 }}>
+                     <TextField  label="Type Email" variant="standard" {...register("Email")} type="email" />
+                 </Box>
+                 <Box sx={{
+                     justifyContent:"center",
+                     display:"flex",
+                     alignItems:"center",
+                 }}>
+                     <TextField label="Type Password" variant="standard" {...register("Password")} type="password"/>
+                 </Box>
+                 <Box sx={{
+                     justifyContent:"center",
+                     display:"flex",
+                     alignItems:"center",
+                     mb:MARGINS.mb3
+                 }}>
+                     <TextField label="Type UserName" variant="standard" {...register("UserName")} type="text"/>
+                 </Box>
+                 <Box sx={{
+                     display:"flex",
+                     justifyContent:"center"
+                 }}>
+             <Button type="submit" sx={{
+                 color:COLOR.grey,
+                 width:"200px",
+                 transition:"0.8s",
+                 bgcolor:COLOR.yellow2,
+                 boxShadow:"4",
+                 borderRadius:"30px",
+                 "&:hover":{
+                  transform: "translateY(-10px)",
+                  bgcolor: COLOR.yellow,  
+                    color:COLOR.grey,
+                    boxShadow:"8",
+                    borderRadius: "100px",
+            
+                 }
+             }}>Sign Up</Button>
+             </Box>
+             <Box sx={{
             display:"flex",
             justifyContent:"center",
-            width:"260px",
+            width:"300px",
             height:"50px",
             alignItems:"center"
           }}>
@@ -169,41 +161,20 @@ import SignInResponsive from "../SignINResponsive";
             </Typography>
           </Divider>
           </Box>
-          <Link href="signUp" underline="none">
-            <Box sx={{
-                dislay:"flex",
+             <Link href="signUp" underline="none">
+             <Box sx={{
+                fontFamily:FONTFAMILY.montserrat2,
+                color:COLOR.grey,
+                display:"flex",
+                mb:MARGINS.mb2,
                 justifyContent:"center",
-                width:"265px"
-            }}>
-          <Box sx={{
-             fontFamily:FONTFAMILY.montserrat2,
-             color:COLOR.grey,
-             display:"flex",
-             justifyContent:"center"
-          }}>
-             Go to the SignUp
-          </Box>
-          </Box>
-          </Link>
-          <Box sx={{
-            mt:"-230px"
-          }}>
-          <Box sx={{
-            fontFamily:FONTFAMILY.montserrat,
-            color:COLOR.grey,
-            fontSize:FONTS.body2,
-            display:"flex",
-            justifyContent:"flex-end",
-            mr:"80px",
-            mb:MARGINS.mb2
-          }}>
-            Login Using social networks
-          </Box>
-          </Box>
-          <Box sx={{
-              mb:MARGINS.mb2,
+             }}>
+                Go to the Sign In
+             </Box>
+             </Link>
+             <Box sx={{
               display:"flex",
-              justifyContent:"flex-end"
+              justifyContent:"center"
           }}>
           <Box sx={{
               display:"flex",
@@ -265,7 +236,6 @@ import SignInResponsive from "../SignINResponsive";
               width:"50px",
               height:"50px",
               transition:"0.9s",
-              mr:"120px",
               borderRadius:BORDRADIUS.xxl,
               bgcolor:COLOR.pink,
               "&:hover":{
@@ -282,12 +252,12 @@ import SignInResponsive from "../SignINResponsive";
           </Link>
           </Box>
           </Box>
-           </Box>
           </Box>
-          </form>
-          </Box>
-      </Box>
+             </Box>
+             </form>
+             </Box>
+         </Box>
      )
  }
 
- export default LogIn
+ export default SignUpResponsive
