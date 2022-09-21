@@ -4,9 +4,8 @@ import HomePage from "./HomePage";
 import LogIn from "./LogIN";
 import About from "./About";
 import { Tools } from "./Tools";
-
 // import SignIN from "./SignIN";
-import Add from "./Add";
+import Add from "./Add";  
 
 import SignUP from "./SignUP";
 
