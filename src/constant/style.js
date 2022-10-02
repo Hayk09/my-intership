@@ -33,6 +33,7 @@ export const BORDRADIUS = {
   md: '4px',
   lg: '6px',
   xl: '12px',
+  lx: '25px',
   xxl: '40px',
 }
 export const FONTFAMILY = {

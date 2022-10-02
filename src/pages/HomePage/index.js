@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Button, Grid, TextField } from "@mui/material";
+import { Box, Button, Grid, TextField, Link } from "@mui/material";
 import { ListItem } from "../../components/ListItem";
 import {
   COLOR,
@@ -8,6 +8,7 @@ import {
   MARGINS,
   BORDRADIUS,
 } from "../../constant/index";
+import Add from "../Add";
 
 const Data = [
   {
@@ -149,7 +150,7 @@ const HomePage = () => {
           ml: "40px",
           boxShadow: 1,
           "&:hover": {
-            boxShadow: 10,
+            boxShadow: 15,
           },
         }}
         onClick={() => setValue(null)}
@@ -160,11 +161,32 @@ const HomePage = () => {
         sx={{
           ml: "100px",
           mt: "30px",
-          bgcolor: COLOR.yellow,
+          bgcolor: COLOR.yellow,  
         }}
+        variant="filled"
         onChange={(even) => setTextfilter(even.target.value)}
-        placeholder="Search"
+        label="Search"
       />
+      <Link href="/Add" sx={{
+        color:"transparent"
+      }}>
+        <Button
+          sx={{
+            ml: "100px",
+            mt: "40px",
+            width: "100px",
+            color: COLOR.yellow,
+            transition: "0.6s",
+            boxShadow: 1,
+            borderRadius:BORDRADIUS.xl,
+            "&:hover": {
+              boxShadow: 15,
+            },
+          }}
+        >
+          ADD
+        </Button>
+      </Link>
       <Box
         sx={{
           width: "100%",
