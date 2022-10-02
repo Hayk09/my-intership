@@ -5,6 +5,7 @@ import LogIn from "./LogIN";
 import About from './About'
 import { Tools } from "./Tools";
 import SignUP from "./SignUP";
+import { ProfilePage } from "./ProfilePage";
 
 
 const config = [
@@ -39,6 +40,13 @@ const config = [
   {
     component: SignUP,
     path: "/signUp",
+    secure: false,
+    exact: true,
+    layout: DefaultLayouts,
+  },
+  {
+    component: ProfilePage,
+    path: "/profile",
     secure: false,
     exact: true,
     layout: DefaultLayouts,
